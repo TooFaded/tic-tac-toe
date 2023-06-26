@@ -26,7 +26,7 @@ function App() {
     winningPattern.forEach((array) => {
       let circleWin = array.every((cell) => cells[cell] === "circle");
       if (circleWin) {
-        setWinningMessage("Circle WINS!");
+        setWinningMessage("Cricle WINS!");
         isDraw = false;
       }
     });

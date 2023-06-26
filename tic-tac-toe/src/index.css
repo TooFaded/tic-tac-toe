@@ -1,5 +1,5 @@
 * {
-  background-color: rgb(220, 208, 183);
+  background-color: rgb(131, 194, 204);
 }
 
 .App {
@@ -78,7 +78,7 @@
   min-width: 100px;
   height: 3vh;
   min-height: 40px;
-  margin: 20px;
+  margin: 40px;
   border: none;
   border-radius: 15px;
   background-color: rgb(217, 85, 73);
@@ -87,8 +87,12 @@
   font-size: 20px;
 }
 
+.reset:hover {
+  background-color: rgba(181, 68, 58, 0.996);
+}
+
 .title {
   font-family: 'Exo', sans-serif;
   font-size: 80px;
-  flex-direction: row;
+  
 }
