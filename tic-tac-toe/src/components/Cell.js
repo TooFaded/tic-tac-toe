@@ -7,34 +7,18 @@ const Cell = ({
   cells,
   winningMsg,
 }) => {
-  const handleClick = (e) => {
-    const isTaken =
-      e.target.firstChild.classList.contains("circle") ||
-      e.target.firstChild.classList.contains("cross");
-    console.log(e.target);
-
-    if (!isTaken) {
-      if (playerTurn === "circle") {
-        e.target.firstChild.classList.add("circle");
-        handleCellChange("circle");
-        setPlayerTurn("cross");
-      }
-      if (playerTurn === "cross") {
-        e.target.firstChild.classList.add("cross");
-        handleCellChange("cross");
-        setPlayerTurn("circle");
-      }
+  const handleClick = () => {
+    if (!cell) {
+      const className = playerTurn === "circle" ? "circle" : "cross";
+      updateCell(className);
+      setPlayerTurn(playerTurn === "circle" ? "cross" : "circle");
     }
   };
 
-  const handleCellChange = (className) => {
-    const nextCells = cells.map((cell, index) => {
-      if (index === id) {
-        return className;
-      } else {
-        return cell;
-      }
-    });
+  const updateCell = (className) => {
+    const nextCells = cells.map((cell, index) =>
+      index === id ? className : cell
+    );
     setCells(nextCells);
   };
 
@@ -48,4 +32,5 @@ const Cell = ({
     </div>
   );
 };
+
 export default Cell;

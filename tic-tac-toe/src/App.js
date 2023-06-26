@@ -21,10 +21,13 @@ function App() {
       [2, 4, 6],
     ];
 
+    let isDraw = true;
+
     winningPattern.forEach((array) => {
       let circleWin = array.every((cell) => cells[cell] === "circle");
       if (circleWin) {
         setWinningMessage("Circle WINS!");
+        isDraw = false;
       }
     });
 
@@ -32,8 +35,13 @@ function App() {
       let crossWin = array.every((cell) => cells[cell] === "cross");
       if (crossWin) {
         setWinningMessage("Cross WINS!");
+        isDraw = false;
       }
     });
+
+    if (isDraw && !cells.includes("")) {
+      setWinningMessage("It's a DRAW!");
+    }
   };
 
   useEffect(() => {
@@ -42,7 +50,7 @@ function App() {
 
   return (
     <div className="App">
-      <p>{winningMsg || turnMessage}</p>
+      <p>{winningMsg ? winningMsg : turnMessage}</p>
       <div className="gameboard">
         {cells.map((cell, index) => (
           <Cell

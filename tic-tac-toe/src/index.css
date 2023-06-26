@@ -1,5 +1,5 @@
 * {
-  background-color: rgb(240, 233, 233);
+  background-color: rgb(220, 208, 183);
 }
 
 .App {
@@ -10,7 +10,7 @@
   align-items: center;
   height: 100vh;
   flex-direction: column;
-  
+  font-family: 'Exo', sans-serif;
 }
 
 .gameboard {
@@ -19,6 +19,7 @@
   display: flex;
   flex-wrap: wrap;
   border: solid 1px black;
+  
 }
 
 .box {
@@ -29,6 +30,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: aliceblue;
 }
 
 .circle {
@@ -37,6 +39,7 @@
   border-radius: 50%;
   border: 30px solid rgb(46, 46, 191);
   box-sizing: border-box;
+  background-color: transparent;
 }
 
 .cross {
