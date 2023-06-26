@@ -1,4 +1,4 @@
-const Cell = ({ id, cell, setCells, playerTurn, setPlayerTurn }) => {
+const Cell = ({ id, cell, setCells, playerTurn, setPlayerTurn, cells }) => {
   const handleClick = (e) => {
     const isTaken =
       e.target.firstChild.classList.contains("circle") ||
@@ -8,13 +8,26 @@ const Cell = ({ id, cell, setCells, playerTurn, setPlayerTurn }) => {
     if (!isTaken) {
       if (playerTurn === "circle") {
         e.target.firstChild.classList.add("circle");
+        handleCellChange("circle");
         setPlayerTurn("cross");
       }
       if (playerTurn === "cross") {
         e.target.firstChild.classList.add("cross");
+        handleCellChange("cross");
         setPlayerTurn("circle");
       }
     }
+  };
+
+  const handleCellChange = (className) => {
+    const nextCells = cells.map((cell, index) => {
+      if (index === id) {
+        return className;
+      } else {
+        return cell;
+      }
+    });
+    setCells(nextCells);
   };
 
   return (
