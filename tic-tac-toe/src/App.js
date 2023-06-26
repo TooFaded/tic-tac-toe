@@ -48,8 +48,30 @@ function App() {
     checkScore();
   }, [cells]);
 
+  const resetGame = () => {
+    setCells(["", "", "", "", "", "", "", "", ""]);
+    setPlayerTurn("circle");
+    setWinningMessage(null);
+  };
+
   return (
     <div className="App">
+      <h1
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+        className="title"
+      >
+        <h1 className="title" style={{ color: "rgb(176, 71, 71)" }}>
+          Tic
+        </h1>
+        Tac
+        <h1 className="title" style={{ color: "rgb(46, 46, 191)" }}>
+          Toe
+        </h1>
+      </h1>
       <p>{winningMsg ? winningMsg : turnMessage}</p>
       <div className="gameboard">
         {cells.map((cell, index) => (
@@ -65,6 +87,9 @@ function App() {
           />
         ))}
       </div>
+      <button className="reset" onClick={resetGame}>
+        Reset
+      </button>
     </div>
   );
 }
