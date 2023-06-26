@@ -5,6 +5,8 @@ function App() {
   const [cells, setCells] = useState(["", "", "", "", "", "", "", "", ""]);
   const [playerTurn, setPlayerTurn] = useState("circle");
   const [winningMsg, setWinningMessage] = useState(null);
+  const [circleScore, setCircleScore] = useState(0);
+  const [crossScore, setCrossScore] = useState(0);
 
   const turnMessage = "It is now " + playerTurn + "'s go.";
   console.log(cells);
@@ -27,6 +29,7 @@ function App() {
       let circleWin = array.every((cell) => cells[cell] === "circle");
       if (circleWin) {
         setWinningMessage("Cricle WINS!");
+        setCircleScore(circleScore + 1);
         isDraw = false;
       }
     });
@@ -35,6 +38,7 @@ function App() {
       let crossWin = array.every((cell) => cells[cell] === "cross");
       if (crossWin) {
         setWinningMessage("Cross WINS!");
+        setCrossScore(crossScore + 1);
         isDraw = false;
       }
     });
@@ -72,6 +76,10 @@ function App() {
           Toe
         </h1>
       </h1>
+      <div className="scoreboard">
+        <p className="circle-score">◎ Score: {circleScore}</p>
+        <p className="cross-score">✖ Score: {crossScore}</p>
+      </div>
       <p>{winningMsg ? winningMsg : turnMessage}</p>
       <div className="gameboard">
         {cells.map((cell, index) => (

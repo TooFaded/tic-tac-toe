@@ -96,3 +96,16 @@
   font-size: 80px;
   
 }
+
+.scoreboard {
+  display: flex;
+  gap: 200px;
+}
+
+.circle-score {
+  color: rgb(46, 46, 191);
+}
+
+.cross-score {
+  color: rgb(176, 71, 71);
+}
