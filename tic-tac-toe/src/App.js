@@ -53,6 +53,7 @@ function App() {
             playerTurn={playerTurn}
             setPlayerTurn={setPlayerTurn}
             cells={cells}
+            winningMsg={winningMsg}
           />
         ))}
       </div>

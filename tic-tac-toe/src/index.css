@@ -1,5 +1,5 @@
 * {
-  background-color: rgb(224, 221, 221);
+  background-color: rgb(240, 233, 233);
 }
 
 .App {
@@ -35,7 +35,7 @@
   height: 180px;
   width: 180px;
   border-radius: 50%;
-  border: 30px solid blue;
+  border: 30px solid rgb(46, 46, 191);
   box-sizing: border-box;
 }
 
@@ -51,7 +51,7 @@
 .cross::before, .cross::after {
   content: '';
   position: absolute;
-  background-color: red;
+  background-color: rgb(176, 71, 71);
 }
 
 .cross::before {
