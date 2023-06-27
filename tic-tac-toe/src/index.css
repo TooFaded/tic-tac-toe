@@ -113,3 +113,38 @@
   color: rgb(176, 71, 71);
 }
 
+/* Media Query */
+@media (max-width: 768px) {
+  .App {
+    font-size: 16px;
+  }
+  
+  .gameboard {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .box {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .circle,
+  .cross {
+    height: 90%;
+    width: 90%;
+  }
+  
+  .reset {
+    font-size: 16px;
+  }
+  
+  .title {
+    font-size: 48px;
+  }
+  
+  .scoreboard {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
