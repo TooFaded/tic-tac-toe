@@ -20,6 +20,8 @@
   display: flex;
   flex-wrap: wrap;
   border: solid 1px black;
+  -webkit-box-shadow: 5px 5px 15px 5px #000000; 
+  box-shadow: 5px 5px 15px 5px #000000;
   
 }
 
@@ -94,6 +96,7 @@
 .title {
   font-family: 'Exo', sans-serif;
   font-size: 80px;
+  text-shadow: 2px 2px 2px #15191b;
   
 }
 
@@ -109,3 +112,4 @@
 .cross-score {
   color: rgb(176, 71, 71);
 }
+
