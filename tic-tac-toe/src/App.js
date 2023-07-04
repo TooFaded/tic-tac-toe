@@ -2,15 +2,18 @@ import { useState, useEffect } from "react";
 import Cell from "./components/Cell";
 
 function App() {
+  // State variables
   const [cells, setCells] = useState(["", "", "", "", "", "", "", "", ""]);
   const [playerTurn, setPlayerTurn] = useState("circle");
   const [winningMsg, setWinningMessage] = useState(null);
   const [circleScore, setCircleScore] = useState(0);
   const [crossScore, setCrossScore] = useState(0);
 
+  // Message for current turn
   const turnMessage = "It is now " + playerTurn + "'s go.";
   console.log(cells);
 
+  // Function to check for a winning score or a draw
   const checkScore = () => {
     const winningPattern = [
       [0, 1, 2],
@@ -24,7 +27,7 @@ function App() {
     ];
 
     let isDraw = true;
-
+    // Check for circle win
     winningPattern.forEach((array) => {
       let circleWin = array.every((cell) => cells[cell] === "circle");
       if (circleWin) {
@@ -33,7 +36,7 @@ function App() {
         isDraw = false;
       }
     });
-
+    // Check for cross win
     winningPattern.forEach((array) => {
       let crossWin = array.every((cell) => cells[cell] === "cross");
       if (crossWin) {
@@ -42,16 +45,18 @@ function App() {
         isDraw = false;
       }
     });
-
+    // Check for a draw
     if (isDraw && !cells.includes("")) {
       setWinningMessage("It's a DRAW!");
     }
   };
 
   useEffect(() => {
+    // Run checkScore whenever cells state changes
     checkScore();
   }, [cells]);
 
+  // Function to reset the game
   const resetGame = () => {
     setCells(["", "", "", "", "", "", "", "", ""]);
     setPlayerTurn("circle");

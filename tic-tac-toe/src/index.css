@@ -97,8 +97,13 @@
   font-family: 'Exo', sans-serif;
   font-size: 80px;
   text-shadow: 2px 2px 2px #15191b;
+
   
 }
+
+
+
+
 
 .scoreboard {
   display: flex;
